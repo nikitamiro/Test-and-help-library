@@ -1,0 +1,62 @@
+--------------------
+Make primary key on varchar 
+--------------------
+
+# I had made a table :
+
+id int,
+name varchar(50),
+addr varchar(50),
+location varchar(20)
+
+# Now i want to make addr column to be PRIMARY KEY COLUMN. I tried a script:
+
+alter table aaa
+add constraint pk_addr primary key(addr)
+
+# But it shows an error and the data in that column is also NOT NULL and UNIQUE.My  question is that can we make a varchar column to be primary key,If yes then the above alter column script is correct or not.
+
+
+# you have to specify that column aaa is not nullable:
+
+create table aaa (id int, name varchar(50), addr varchar(50), location varchar(20));
+
+alter table aaa alter column addr varchar(50) not null;
+alter table aaa add constraint pk_addr primary key(addr);
+
+
+--------------------
+Get variance of column
+--------------------
+
+/* Create a table called NAMES */
+CREATE TABLE NAMES(Id integer, Name text);
+
+/* Create few records in this table */
+INSERT INTO NAMES VALUES(1,'Tom');
+INSERT INTO NAMES VALUES(2,'Lucy');
+INSERT INTO NAMES VALUES(3,'Frank');
+INSERT INTO NAMES VALUES(4,'Jane');
+INSERT INTO NAMES VALUES(5,'Robert');
+INSERT INTO NAMES VALUES(1,'Tom');
+INSERT INTO NAMES VALUES(2,'Lucy');
+INSERT INTO NAMES VALUES(3,'Frank');
+INSERT INTO NAMES VALUES(4,'Jane');
+INSERT INTO NAMES VALUES(5,'Robert');
+
+/* Display all the records from the table */
+SELECT * FROM NAMES;
+
+/* Get the average */
+SELECT AVG(id) from NAMES 
+WHERE (Name = 'Tom' or Name = 'Jane');
+
+/* Get the variances. computes the mean inside */
+SELECT SUM(diff)/count(*) FROM(
+SELECT *, (id-mean)*(id-mean) as diff FROM (
+SELECT *, (SELECT AVG(id) from NAMES 
+WHERE (Name = 'Tom' or Name = 'Jane')) as mean 
+FROM NAMES));
+
+
+
