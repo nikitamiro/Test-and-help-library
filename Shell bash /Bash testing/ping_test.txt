@@ -1,0 +1,14 @@
+PING esp.com (50.28.73.74): 56 data bytes
+64 bytes from 50.28.73.74: icmp_seq=0 ttl=52 time=46.743 ms
+64 bytes from 50.28.73.74: icmp_seq=1 ttl=52 time=47.422 ms
+
+--- esp.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 46.743/47.082/47.422/0.340 ms
+PING esp.com (50.28.73.74): 56 data bytes
+64 bytes from 50.28.73.74: icmp_seq=0 ttl=52 time=43.825 ms
+64 bytes from 50.28.73.74: icmp_seq=1 ttl=52 time=46.334 ms
+
+--- esp.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 43.825/45.080/46.334/1.255 ms

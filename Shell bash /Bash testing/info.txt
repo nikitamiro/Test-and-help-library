@@ -1,0 +1,101 @@
+Last login: Sun Jan  1 10:22:46 on ttys000
+Nikitas-Mac-Pro:~ Nikita$ cd Desktop/
+Nikitas-Mac-Pro:Desktop Nikita$ cd Git
+Nikitas-Mac-Pro:Git Nikita$ ls
+Machine-Learning	Python help code	bash
+Nikitas-Mac-Pro:Git Nikita$ cd bash/
+Nikitas-Mac-Pro:bash Nikita$ ./sharpe_ratio.sh
+-bash: ./sharpe_ratio.sh: Permission denied
+Nikitas-Mac-Pro:bash Nikita$ chmod +x sharpe_ratio.sh
+Nikitas-Mac-Pro:bash Nikita$ ./sharpe_ratio.sh
+Hello world!
+Nikitas-Mac-Pro:bash Nikita$ $a=1
+-bash: =1: command not found
+Nikitas-Mac-Pro:bash Nikita$ a=1
+Nikitas-Mac-Pro:bash Nikita$ b=2
+Nikitas-Mac-Pro:bash Nikita$ echo $a
+1
+Nikitas-Mac-Pro:bash Nikita$ echo $b
+2
+Nikitas-Mac-Pro:bash Nikita$ c=$((a+b))
+Nikitas-Mac-Pro:bash Nikita$ echo $c
+3
+Nikitas-Mac-Pro:bash Nikita$ 
+
+-----------------------------
+
+Last login: Sun Jan  1 10:22:46 on ttys000
+Nikitas-Mac-Pro:~ Nikita$ cd Desktop/
+Nikitas-Mac-Pro:Desktop Nikita$ cd Git
+Nikitas-Mac-Pro:Git Nikita$ ls
+Machine-Learning	Python help code	bash
+Nikitas-Mac-Pro:Git Nikita$ cd bash/
+Nikitas-Mac-Pro:bash Nikita$ ./sharpe_ratio.sh
+-bash: ./sharpe_ratio.sh: Permission denied
+Nikitas-Mac-Pro:bash Nikita$ chmod +x sharpe_ratio.sh
+Nikitas-Mac-Pro:bash Nikita$ ./sharpe_ratio.sh
+Hello world!
+Nikitas-Mac-Pro:bash Nikita$ $a=1
+-bash: =1: command not found
+Nikitas-Mac-Pro:bash Nikita$ a=1
+Nikitas-Mac-Pro:bash Nikita$ b=2
+Nikitas-Mac-Pro:bash Nikita$ echo $a
+1
+Nikitas-Mac-Pro:bash Nikita$ echo $b
+2
+Nikitas-Mac-Pro:bash Nikita$ c=$((a+b))
+Nikitas-Mac-Pro:bash Nikita$ echo $c
+3
+Nikitas-Mac-Pro:bash Nikita$ ./sharpe_ratio.sh
+Hello world!
+Nikitas-Mac-Pro:bash Nikita$ ls
+info.txt	ping_test.txt	sharpe_ratio.sh
+Nikitas-Mac-Pro:bash Nikita$ cat ping_test.txt
+PING esp.com (50.28.73.74): 56 data bytes
+64 bytes from 50.28.73.74: icmp_seq=0 ttl=52 time=48.128 ms
+64 bytes from 50.28.73.74: icmp_seq=1 ttl=52 time=47.326 ms
+
+--- esp.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 47.326/47.727/48.128/0.401 ms
+Nikitas-Mac-Pro:bash Nikita$ 
+
+---------------
+in [sampletext].sh file:
+
+#!/bin/bash
+echo Hello world!
+ping -c 2 esp.com >> ping_test.txt
+
+
+-------
+Nikitas-Mac-Pro:Desktop Nikita$ cd Git
+Nikitas-Mac-Pro:Git Nikita$ cd bashj
+-bash: cd: bashj: No such file or directory
+Nikitas-Mac-Pro:Git Nikita$ cd bash
+Nikitas-Mac-Pro:bash Nikita$ ls
+info.txt	ping_test.txt	sharpe_ratio.sh	text.csv
+Nikitas-Mac-Pro:bash Nikita$ awk -F\, '{print $1}' text.csv
+date
+20160104
+20160105
+20160106
+20160107
+20160108
+20160111
+20160112
+20160113
+20160114
+20160115
+20160118
+20160119
+20160120
+20160121
+20160122
+Nikitas-Mac-Pro:bash Nikita$ 
+
+-------
+#! /bin/bash
+awk -F\, '$1 >= 20160120 && $1 <= 20160121  {print $5, $6}' <(gzip -dc text.csv.gz)
+
+
